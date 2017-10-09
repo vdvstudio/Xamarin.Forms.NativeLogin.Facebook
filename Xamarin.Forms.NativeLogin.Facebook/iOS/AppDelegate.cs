@@ -24,7 +24,7 @@ namespace Xamarin.Forms.NativeLogin.Facebook.iOS
 			Settings.DisplayName = _appName;
 
 			LoginManager = new LoginManager();
-            FacebookManager.OnLogout += (sender, e) => LoginManager.LogOut();
+            FacebookManager.RegisterLogout(() => LoginManager.LogOut());
 
             global::Xamarin.Forms.Forms.Init();
 

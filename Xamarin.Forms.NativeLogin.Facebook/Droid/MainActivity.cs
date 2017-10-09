@@ -27,7 +27,7 @@ namespace Xamarin.Forms.NativeLogin.Facebook.Droid
 
         protected override void OnCreate(Bundle bundle)
         {
-            FacebookManager.OnLogout += (sender, e) => LoginManager.Instance.LogOut();
+            FacebookManager.RegisterLogout(() => LoginManager.Instance.LogOut());
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
