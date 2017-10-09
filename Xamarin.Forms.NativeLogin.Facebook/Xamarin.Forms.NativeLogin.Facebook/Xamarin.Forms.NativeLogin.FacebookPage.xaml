@@ -1,4 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Xamarin.Forms.NativeLogin.Facebook" x:Class="Xamarin.Forms.NativeLogin.Facebook.Xamarin_Forms_NativeLogin_FacebookPage">
-	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:Xamarin.Forms.NativeLogin.Facebook.Controls" x:Class="Xamarin.Forms.NativeLogin.Facebook.Xamarin_Forms_NativeLogin_FacebookPage">
+    <StackLayout VerticalOptions="Center" Margin="25" Spacing="10">
+	    <Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+        <local:FacebookLoginButton
+            x:Name="FacebookLoginButton"
+            Behavior="Native"
+            LoginSuccess="Handle_LoginSuccess"
+            LoginError="Handle_LoginError"
+            LoginCancel="Handle_LoginCancel" />
+        <Button Text="Logout" BackgroundColor="Red" TextColor="White" Clicked="Handle_Clicked" />
+    </StackLayout>
 </ContentPage>
