@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+	<string name="app_name">Xamarin.Forms Native Login</string>
+    <string name="facebook_app_id">530053500680672</string>
+    <string name="fb_login_protocol_scheme">fb530053500680672</string>
+</resources>
