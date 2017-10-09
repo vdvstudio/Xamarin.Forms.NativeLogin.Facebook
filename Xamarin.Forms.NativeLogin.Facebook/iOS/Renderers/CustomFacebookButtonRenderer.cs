@@ -20,7 +20,7 @@ namespace Xamarin.Forms.NativeLogin.Facebook.iOS.Renderers
 
         public CustomFacebookButtonRenderer()
         {
-            FacebookManager.OnLogout += facebookLogout;
+            
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
@@ -58,10 +58,6 @@ namespace Xamarin.Forms.NativeLogin.Facebook.iOS.Renderers
             loginView.SendActionForControlEvents(UIControlEvent.TouchUpInside);
         }
 
-        void facebookLogout(object sender, EventArgs e)
-        {
-            AppDelegate.LoginManager.LogOut();
-        }
 
         private void Handler(LoginManagerLoginResult result, NSError error)
         {

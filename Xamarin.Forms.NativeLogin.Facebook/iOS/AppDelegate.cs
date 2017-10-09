@@ -5,6 +5,7 @@ using Facebook.CoreKit;
 using Facebook.LoginKit;
 using Foundation;
 using UIKit;
+using Xamarin.Forms.NativeLogin.Facebook.Managers;
 
 namespace Xamarin.Forms.NativeLogin.Facebook.iOS
 {
@@ -21,7 +22,9 @@ namespace Xamarin.Forms.NativeLogin.Facebook.iOS
 			Profile.EnableUpdatesOnAccessTokenChange(true);
 			Settings.AppID = _appId;
 			Settings.DisplayName = _appName;
+
 			LoginManager = new LoginManager();
+            FacebookManager.OnLogout += (sender, e) => LoginManager.LogOut();
 
             global::Xamarin.Forms.Forms.Init();
 
