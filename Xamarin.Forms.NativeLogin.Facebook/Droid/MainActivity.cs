@@ -16,6 +16,13 @@ namespace Xamarin.Forms.NativeLogin.Facebook.Droid
     [Activity(Label = "Xamarin.Forms.NativeLogin.Facebook.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        public static MainActivity Instance { get; private set; }
+        public MainActivity()
+        {
+            Instance = this;
+        }
+
+
         public static ICallbackManager CallbackManager = CallbackManagerFactory.Create();
 
         protected override void OnCreate(Bundle bundle)

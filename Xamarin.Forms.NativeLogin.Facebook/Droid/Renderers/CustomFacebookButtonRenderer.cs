@@ -14,16 +14,11 @@ namespace Xamarin.Forms.NativeLogin.Facebook.Droid.Renderers
 {
 	public class CustomFacebookButtonRenderer : ButtonRenderer
 	{
-		private readonly LoginButton _loginButton;
 		private FacebookLoginButton _facebookLoginButton;
 		private FacebookCallback<LoginResult> LoginCallback { get; set; }
 
 		public CustomFacebookButtonRenderer()
 		{
-            _loginButton = new LoginButton(Context)
-			{
-				LoginBehavior = LoginBehavior.NativeWithFallback
-			};
 
 			LoginCallback = new FacebookCallback<LoginResult>();
 			LoginCallback.HandleSuccess = loginResult =>
@@ -51,7 +46,7 @@ namespace Xamarin.Forms.NativeLogin.Facebook.Droid.Renderers
 
 		private void Control_Click(object sender, System.EventArgs e)
 		{
-			_loginButton.PerformClick();
+			LoginManager.Instance.LogInWithReadPermissions(MainActivity.Instance, _facebookLoginButton.Permissions);
 		}
 
 	}
